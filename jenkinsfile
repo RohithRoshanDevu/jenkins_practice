@@ -1,0 +1,25 @@
+pipeline{
+    agent{
+        label 'slave1_linux_pc'
+    }
+    stages{
+        stage('Stage 1'){
+            steps{
+                echo 'Stage 1'
+                build 'First_Job'
+            }
+        }
+        stage('Stage 2'){
+            steps{
+                echo 'Stage 2'
+                build 'Second_Job'
+            }
+        }
+        stage('Stage 3'){
+            steps{
+                echo 'Stage 3'
+                build 'Third_Job'
+            }
+        }
+    }
+}
